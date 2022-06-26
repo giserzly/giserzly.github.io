@@ -15,19 +15,19 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="John Doe">
+  <meta name="author" content="Ling yi">
   <meta name="keywords" content="">
   
-    <meta name="description" content="对象、Web API">
+    <meta name="description" content="对象、Web API1. 对象构造">
 <meta property="og:type" content="article">
 <meta property="og:title" content="对象、Web API">
-<meta property="og:url" content="http://example.com/2022/06/26/%E5%AF%B9%E8%B1%A1%E3%80%81Web-API/index/index.html">
+<meta property="og:url" content="https://giserzly.github.io/2022/06/26/%E5%AF%B9%E8%B1%A1%E3%80%81Web-API/index/index.html">
 <meta property="og:site_name" content="o1de博客">
-<meta property="og:description" content="对象、Web API">
+<meta property="og:description" content="对象、Web API1. 对象构造">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-06-26T15:44:24.000Z">
-<meta property="article:modified_time" content="2022-06-26T15:50:03.542Z">
-<meta property="article:author" content="John Doe">
+<meta property="article:modified_time" content="2022-06-26T15:59:03.351Z">
+<meta property="article:author" content="Ling yi">
 <meta property="article:tag" content="Javascript">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -73,7 +73,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"giserzly.github.io","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -281,8 +281,8 @@
             
               <div class="markdown-body">
                 
-                <h3 id="对象、Web-API"><a href="#对象、Web-API" class="headerlink" title="对象、Web API"></a>对象、Web API</h3><span id="more"></span>
-<h4 id="1-对象"><a href="#1-对象" class="headerlink" title="1. 对象"></a>1. 对象</h4><h6 id="构造"><a href="#构造" class="headerlink" title="构造"></a>构造</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> obj = &#123;&#125;;<span class="hljs-comment">//空对象</span><br><span class="hljs-keyword">let</span> obj = &#123;<br>    <span class="hljs-attr">name</span>:<span class="hljs-string">&#x27;01&#x27;</span>,<br>    <span class="hljs-attr">age</span>:<span class="hljs-number">22</span>,<br>    <span class="hljs-attr">sayHi</span>:<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;Hi~&#x27;</span>);<br>    &#125;<br>&#125;<span class="hljs-comment">//名称，年龄，匿名函数,属性逗号隔开</span><br><br><span class="hljs-comment">//第二种方法 Object</span><br><span class="hljs-keyword">let</span> obj = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Object</span>();<br>obj.<span class="hljs-property">name</span> = <span class="hljs-string">&#x27;01&#x27;</span>;<br>obj.<span class="hljs-property">age</span> = <span class="hljs-number">18</span>;<br>obj.<span class="hljs-property">sayHi</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;<br>	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;SayHi&#x27;</span>);<br>&#125;<br><span class="hljs-comment">//第三种方法 构造函数 对象里一些相同的属性和方法抽象出来封装到函数里</span><br><span class="hljs-keyword">function</span> 构造函数名(参数)&#123;    <br>    <span class="hljs-variable language_">this</span>.属性 = 参数；<br>    <span class="hljs-variable language_">this</span>.方法 = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;<br>    &#125;<br>&#125;<br><span class="hljs-keyword">let</span> sth = <span class="hljs-keyword">new</span> 构造函数名(参数) <br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(sth.属性)<br><span class="hljs-comment">////构造函数名首字母要大写、用构造函数必须要new、属性和方法之前必须使用this</span><br><br></code></pre></td></tr></table></figure>
+                <h3 id="对象、Web-API"><a href="#对象、Web-API" class="headerlink" title="对象、Web API"></a>对象、Web API</h3><h4 id="1-对象"><a href="#1-对象" class="headerlink" title="1. 对象"></a>1. 对象</h4><h6 id="构造"><a href="#构造" class="headerlink" title="构造"></a>构造</h6><span id="more"></span>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> obj = &#123;&#125;;<span class="hljs-comment">//空对象</span><br><span class="hljs-keyword">let</span> obj = &#123;<br>    <span class="hljs-attr">name</span>:<span class="hljs-string">&#x27;01&#x27;</span>,<br>    <span class="hljs-attr">age</span>:<span class="hljs-number">22</span>,<br>    <span class="hljs-attr">sayHi</span>:<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;Hi~&#x27;</span>);<br>    &#125;<br>&#125;<span class="hljs-comment">//名称，年龄，匿名函数,属性逗号隔开</span><br><br><span class="hljs-comment">//第二种方法 Object</span><br><span class="hljs-keyword">let</span> obj = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Object</span>();<br>obj.<span class="hljs-property">name</span> = <span class="hljs-string">&#x27;01&#x27;</span>;<br>obj.<span class="hljs-property">age</span> = <span class="hljs-number">18</span>;<br>obj.<span class="hljs-property">sayHi</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;<br>	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;SayHi&#x27;</span>);<br>&#125;<br><span class="hljs-comment">//第三种方法 构造函数 对象里一些相同的属性和方法抽象出来封装到函数里</span><br><span class="hljs-keyword">function</span> 构造函数名(参数)&#123;    <br>    <span class="hljs-variable language_">this</span>.属性 = 参数；<br>    <span class="hljs-variable language_">this</span>.方法 = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;<br>    &#125;<br>&#125;<br><span class="hljs-keyword">let</span> sth = <span class="hljs-keyword">new</span> 构造函数名(参数) <br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(sth.属性)<br><span class="hljs-comment">////构造函数名首字母要大写、用构造函数必须要new、属性和方法之前必须使用this</span><br><br></code></pre></td></tr></table></figure>
 <h6 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(obj.<span class="hljs-property">uname</span>)<span class="hljs-comment">//对象.属性名</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(obj[<span class="hljs-string">&#x27;age&#x27;</span>])<span class="hljs-comment">//对象[&#x27;属性名&#x27;]</span><br>obj.<span class="hljs-title function_">sayHi</span>() <span class="hljs-comment">//对象名.方法名</span><br><span class="hljs-comment">//遍历属性</span><br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> key <span class="hljs-keyword">in</span> 对象)&#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(key)<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(对象[key])<span class="hljs-comment">//输出属性值</span><br>&#125;<br></code></pre></td></tr></table></figure>
 <h6 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h6><p>1.Math<br>2.Date<br>3.String<br>4.Array</p>
 <h6 id="甄别"><a href="#甄别" class="headerlink" title="甄别"></a>甄别</h6><ol>
@@ -354,13 +354,13 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>对象、Web API</div>
-      <div>http://example.com/2022/06/26/对象、Web-API/index/</div>
+      <div>https://giserzly.github.io/2022/06/26/对象、Web-API/index/</div>
     </div>
     <div class="license-meta">
       
         <div class="license-meta-item">
           <div>作者</div>
-          <div>John Doe</div>
+          <div>Ling yi</div>
         </div>
       
       
@@ -396,15 +396,15 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/2022/06/26/HEXO%E8%AE%BE%E7%BD%AE/index/" title="HEXO设置">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">HEXO设置</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
-                    
-                      <a href="/2022/06/26/hello-world/" title="Hello World">
-                        <span class="hidden-mobile">Hello World</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
                     
                   </article>
                 </div>
