@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>对象、Web API</title>
+    <link href="/2022/06/26/%E5%AF%B9%E8%B1%A1%E3%80%81Web-API/index/"/>
+    <url>/2022/06/26/%E5%AF%B9%E8%B1%A1%E3%80%81Web-API/index/</url>
+    
+    <content type="html"><![CDATA[<h3 id="对象、Web-API"><a href="#对象、Web-API" class="headerlink" title="对象、Web API"></a>对象、Web API</h3><span id="more"></span><h4 id="1-对象"><a href="#1-对象" class="headerlink" title="1. 对象"></a>1. 对象</h4><h6 id="构造"><a href="#构造" class="headerlink" title="构造"></a>构造</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> obj = &#123;&#125;;<span class="hljs-comment">//空对象</span><br><span class="hljs-keyword">let</span> obj = &#123;<br>    <span class="hljs-attr">name</span>:<span class="hljs-string">&#x27;01&#x27;</span>,<br>    <span class="hljs-attr">age</span>:<span class="hljs-number">22</span>,<br>    <span class="hljs-attr">sayHi</span>:<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;Hi~&#x27;</span>);<br>    &#125;<br>&#125;<span class="hljs-comment">//名称，年龄，匿名函数,属性逗号隔开</span><br><br><span class="hljs-comment">//第二种方法 Object</span><br><span class="hljs-keyword">let</span> obj = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Object</span>();<br>obj.<span class="hljs-property">name</span> = <span class="hljs-string">&#x27;01&#x27;</span>;<br>obj.<span class="hljs-property">age</span> = <span class="hljs-number">18</span>;<br>obj.<span class="hljs-property">sayHi</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;SayHi&#x27;</span>);<br>&#125;<br><span class="hljs-comment">//第三种方法 构造函数 对象里一些相同的属性和方法抽象出来封装到函数里</span><br><span class="hljs-keyword">function</span> 构造函数名(参数)&#123;    <br>    <span class="hljs-variable language_">this</span>.属性 = 参数；<br>    <span class="hljs-variable language_">this</span>.方法 = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;<br>    &#125;<br>&#125;<br><span class="hljs-keyword">let</span> sth = <span class="hljs-keyword">new</span> 构造函数名(参数) <br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(sth.属性)<br><span class="hljs-comment">////构造函数名首字母要大写、用构造函数必须要new、属性和方法之前必须使用this</span><br><br></code></pre></td></tr></table></figure><h6 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(obj.<span class="hljs-property">uname</span>)<span class="hljs-comment">//对象.属性名</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(obj[<span class="hljs-string">&#x27;age&#x27;</span>])<span class="hljs-comment">//对象[&#x27;属性名&#x27;]</span><br>obj.<span class="hljs-title function_">sayHi</span>() <span class="hljs-comment">//对象名.方法名</span><br><span class="hljs-comment">//遍历属性</span><br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> key <span class="hljs-keyword">in</span> 对象)&#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(key)<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(对象[key])<span class="hljs-comment">//输出属性值</span><br>&#125;<br></code></pre></td></tr></table></figure><h6 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h6><p>1.Math<br>2.Date<br>3.String<br>4.Array</p><h6 id="甄别"><a href="#甄别" class="headerlink" title="甄别"></a>甄别</h6><ol><li><p>函数和方法： 都是实现某种功能，在外面的叫函数，在对象里面的叫方法</p></li><li><p>构造函数和对象</p><p>构造函数是泛指的某一大类</p><p>对象是一个具体的事物，是构造函数的实例化</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><br></code></pre></td></tr></table></figure><h4 id="2-Web-API"><a href="#2-Web-API" class="headerlink" title="2. Web API"></a>2. Web API</h4><p>应用程序编程接口，实现页面交互功能</p></li></ol><ul><li>BOM 浏览器功能 交互效果<ul><li>alert</li></ul></li><li>DOM树  页面元素<ul><li>文档页面从上往下加载 得现有标签，script脚本写在标签下</li></ul></li></ul><h5 id="1-DOM"><a href="#1-DOM" class="headerlink" title="1.DOM"></a>1.DOM</h5><h6 id="获取元素"><a href="#获取元素" class="headerlink" title="获取元素"></a>获取元素</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>() <span class="hljs-comment">//返回的是一个元素对象Object</span><br><span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementsByTagName</span>()<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Study</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Javascript</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="/2022/06/26/hello-world/"/>
+    <url>/2022/06/26/hello-world/</url>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  
+</search>
